@@ -2,7 +2,7 @@ package com.mars.cookedcarrots;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,8 +25,8 @@ public class CookedCarrots {
     }
 
     @SubscribeEvent
-    public static void buildContents(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+    public static void buildContents(CreativeModeTabEvent.BuildContents event) {
+        if (event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
             CommonClass.ITEMS.forEach((string, itemSupplier) -> event.accept(itemSupplier.get()));
         }
     }
