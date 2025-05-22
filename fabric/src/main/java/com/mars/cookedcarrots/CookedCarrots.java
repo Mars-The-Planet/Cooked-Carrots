@@ -13,7 +13,7 @@ public class CookedCarrots implements ModInitializer {
     @Override
     public void onInitialize() {
         CommonClass.init();
-        CommonClass.ITEMS.forEach((string, itemSupplier) -> Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, string), itemSupplier.get()));
+        CommonClass.ITEMS.forEach((string, itemSupplier) -> Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, string), itemSupplier.get()));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS)
                 .register((itemGroup) -> CommonClass.ITEMS.forEach((string, itemSupplier) -> itemGroup.accept(itemSupplier.get())));
     }
