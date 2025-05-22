@@ -2,15 +2,12 @@ package com.mars.cookedcarrots;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
-import com.mars.cookedcarrots.platform.Services;
 import com.mars.deimos.datagen.DeimosRecipeGenerator;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.Consumables;
 
 import java.util.HashMap;
