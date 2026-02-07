@@ -16,4 +16,4 @@
 <a href="https://modrinth.com/mod/deimos" rel="nofollow">
 <img src="https://i.imgur.com/j2GIPnt.png"/></a>
 </p></center> 
-<p style="text-align: center;"><a href="https://mars-the-planet.github.io/" rel="nofollow"><img src="https://www.bisecthosting.com/partners/custom-banners/a1a13adf-7c67-48f1-8d6e-e08334434df1.png"/></a></p>
+<p style="text-align: center;"><a href="https://url-shortener.curseforge.com/pR5Ok" rel="nofollow"><img src="https://i.imgur.com/y3LiTfU.png"/></a></p>
