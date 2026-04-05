@@ -5,7 +5,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,7 +20,7 @@ public class CookedCarrots {
 
         CommonClass.ITEMS.forEach(ITEMS::register);
         ITEMS.register(eventBus);
-        BuildCreativeModeTabContentsEvent.getBus(eventBus).addListener(CookedCarrots::buildContents);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(CookedCarrots::buildContents);
     }
 
     @SubscribeEvent
