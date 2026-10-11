@@ -2,6 +2,7 @@ package com.mars.cookedcarrots;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
+import com.google.gson.JsonElement;
 import com.mars.deimos.datagen.DeimosRecipeGenerator;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -9,9 +10,13 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.crafting.Recipe;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import static com.mars.cookedcarrots.Constants.LOG;
 import static com.mars.cookedcarrots.Constants.MOD_ID;
 
 public class CommonClass {
@@ -22,8 +27,10 @@ public class CommonClass {
     public static void init() {
         ITEMS.put("cooked_carrot", COOKED_CARROT);
 
-        DeimosRecipeGenerator.createSmeltingJson("minecraft:carrot", "cookedcarrots:cooked_carrot", 200, 0.35f);
-        DeimosRecipeGenerator.createSmokingJson("minecraft:carrot", "cookedcarrots:cooked_carrot", 100, 0.35f);
-        DeimosRecipeGenerator.createCampfireCookingJson("minecraft:carrot", "cookedcarrots:cooked_carrot", 600, 0);
+        DeimosRecipeGenerator.registerProvider((existing, ops) -> {
+            DeimosRecipeGenerator.createSmeltingJson("minecraft:carrot", "cookedcarrots:cooked_carrot", 200, 0.35f);
+            DeimosRecipeGenerator.createSmokingJson("minecraft:carrot", "cookedcarrots:cooked_carrot", 100, 0.35f);
+            DeimosRecipeGenerator.createCampfireCookingJson("minecraft:carrot", "cookedcarrots:cooked_carrot", 600, 0);
+        });
     }
 }
